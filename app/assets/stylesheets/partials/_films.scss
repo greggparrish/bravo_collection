@@ -1,0 +1,40 @@
+// Film grid on films main page
+.film_wrapper {
+  padding-top: 50px;
+  .image_wrapper {
+    .film_title {
+      font-family: $heading-font-family;
+      font-size: 1.1em;
+      position: absolute;
+      padding: 10px;
+      min-height: 60px;
+      background-color: $black;
+      color: $white;
+      opacity: 0.8;
+      bottom: 0;
+      left:0;   
+      right:0;
+      filter: alpha(opacity=80);
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .film_desc {
+    clear: both;
+    min-height: 140px;
+    @media(max-width:$tablet) {
+      min-height: 160px;
+    }
+    @media(min-width:$laptop) {
+      min-height: 110px;
+    }
+  }
+
+  .year_dur {
+    padding: 5px 0;
+    color: $light-grey;
+  }
+}

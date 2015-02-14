@@ -1,0 +1,23 @@
+<% provide(:title, @film.title) %>
+<div class='container'>
+  <div class="bread">
+    <span class='bread_first'>FILMS:</span><span class='bread_second'> <em><%= @film.title.upcase %></em></span>
+  </div>
+  <div class='page_intro'>
+    <%= image_tag(@film.thumbnail, class: "description_img") %>
+    <p>
+      <%= @film.description.html_safe %>
+    </p>
+    <p class="float-left">
+      <%= @film.year %> 
+    </p>
+    <p class="float-right">
+      <%= @film.duration %> min
+    </p>
+  </div>
+
+    <div class='video_grid'>
+      <h4>VIDEOS FROM <em><%= @film.title.upcase %></em></h4>
+      <%= render @related_video  %>
+  </div>
+</div>
