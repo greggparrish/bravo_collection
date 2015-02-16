@@ -2,6 +2,7 @@
 *.swp
 capybara-*.html
 .rspec
+.capistrano
 /log
 /tmp
 /db/*.sqlite3
