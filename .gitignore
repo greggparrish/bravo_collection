@@ -1,4 +1,5 @@
 *.rbc
+*.swp
 capybara-*.html
 .rspec
 /log
@@ -34,8 +35,6 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
-
-
 
 #images
 *.png

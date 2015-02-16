@@ -1,5 +1,7 @@
 class Collection < ActiveRecord::Base
   has_many :videos
+  validates :title, :description, :presence => true
+
   extend FriendlyId
   friendly_id :title, use: :slugged
   has_attached_file :image, :default_url => "/system/collections/default_collection.jpg"

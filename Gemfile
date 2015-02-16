@@ -27,6 +27,8 @@ gem 'formaggio', github: 'NYULibraries/formaggio'
 
 
 group :development do
+  gem "capistrano"
+  gem "capistrano-rvm"
   gem "populator"
   gem "web-console"
 end
