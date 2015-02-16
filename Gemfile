@@ -25,11 +25,13 @@ gem "uglifier"
 ## NYU gems
 #gem 'formaggio', github: 'NYULibraries/formaggio'
 
-
 group :development do
-  gem 'capistrano-rails', '~> 1.1.1'
-  gem "rvm-capistrano"
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails', '~> 1.1.0'
   gem "populator"
+  gem 'rvm-capistrano'
   gem "web-console"
 end
 
