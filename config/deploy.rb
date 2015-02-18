@@ -5,7 +5,7 @@ set :application, 'bravo_collection'
 set :repo_url, 'git@github.com:greggparrish/bravo_collection.git'
 set :deploy_to, '/home/ubuntu/public/web/bravo'
   
-set :rails_env, "deploy"  # will this effect other built-in tasks? Maybe. 
+set :rails_env, "deploy" 
 set :keep_releases, 5
 
 namespace :deploy do

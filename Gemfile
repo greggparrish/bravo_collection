@@ -7,20 +7,17 @@ gem "active_admin_import" , '2.1.2'
 gem "bootstrap-sass"
 gem "cancan"
 gem 'ckeditor'
-gem "coffee-rails", "~> 4.1.0"
 gem "delayed_job_active_record"
 gem "devise"
 gem "font-awesome-sass"
 gem 'friendly_id'
 gem "jquery-rails"
-gem "normalize-rails", "~> 3.0.0"
 gem "mysql2"
 gem 'paperclip'
 gem "rails", "4.2.0"
 gem "sass", "~> 3.4"
 gem "simple_form"
 gem "turbolinks"
-gem "uglifier"
 
 ## NYU gems
 #gem 'formaggio', github: 'NYULibraries/formaggio'
@@ -29,7 +26,6 @@ group :development do
   gem 'capistrano', '~> 3.1.0'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
-  gem 'capistrano-rails', '~> 1.1.0'
   gem "populator"
   gem 'rvm-capistrano'
   gem "web-console"
