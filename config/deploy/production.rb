@@ -9,7 +9,7 @@ set :server_name, "bravo.greggparrish.com"
 
 server 'bravo.greggparrish.com', user: 'ubuntu', roles: %w{web app db}, primary: true
 
-set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
+#set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
 
 # dont try and infer something as important as environment from
 # stage name.

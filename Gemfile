@@ -24,10 +24,9 @@ gem "turbolinks"
 
 group :development do
   gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem "populator"
-  gem 'rvm-capistrano'
   gem "web-console"
 end
 
