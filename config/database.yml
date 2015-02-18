@@ -4,9 +4,10 @@ mysql2: &mysql2
 
 development:
   <<: *mysql2 
-  username: bravo_user
-  password: KFrIbyR0a4RiR3rql7xLi17
-  database: bravo_development
+  host:     <%= ENV['BRAVO_DB_HOST']     %>
+  database: <%= ENV['BRAVO_DB_DATABASE'] %>
+  username: <%= ENV['BRAVO_DB_USER']     %>
+  password: <%= ENV['BRAVO_DB_PASSWORD'] %>
   encoding: utf8
   host: localhost
   min_messages: warning
