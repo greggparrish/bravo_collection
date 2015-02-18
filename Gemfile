@@ -18,6 +18,7 @@ gem "rails", "4.2.0"
 gem "sass", "~> 3.4"
 gem "simple_form"
 gem "turbolinks"
+gem "uglifier"
 
 ## NYU gems
 #gem 'formaggio', github: 'NYULibraries/formaggio'
