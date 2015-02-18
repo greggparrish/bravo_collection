@@ -1,0 +1,25 @@
+mysql2: &mysql2
+  adapter: mysql2
+  encoding: utf8
+
+development:
+  <<: *mysql2 
+  username: bravo_user
+  password: KFrIbyR0a4RiR3rql7xLi17
+  database: bravo_development
+  encoding: utf8
+  host: localhost
+  min_messages: warning
+  pool: 2
+  timeout: 5000
+
+test:
+  <<: *mysql2
+  database: bravo_test
+
+production:
+  <<: *mysql2
+  host:     <%= ENV['BRAVO_DB_HOST']     %>
+  database: <%= ENV['BRAVO_DB_DATABASE'] %>
+  username: <%= ENV['BRAVO_DB_USER']     %>
+  password: <%= ENV['BRAVO_DB_PASSWORD'] %>
