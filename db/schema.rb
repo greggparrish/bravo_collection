@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213203820) do
+ActiveRecord::Schema.define(version: 20150218150527) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -77,12 +77,16 @@ ActiveRecord::Schema.define(version: 20150213203820) do
   add_index "collections", ["slug"], name: "index_collections_on_slug", using: :btree
 
   create_table "documents", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.integer  "year",        limit: 4
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "slug",        limit: 255
+    t.string   "title",                      limit: 255
+    t.integer  "year",                       limit: 4
+    t.text     "description",                limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "slug",                       limit: 255
+    t.string   "document_file_file_name",    limit: 255
+    t.string   "document_file_content_type", limit: 255
+    t.integer  "document_file_file_size",    limit: 4
+    t.datetime "document_file_updated_at"
   end
 
   add_index "documents", ["slug"], name: "index_documents_on_slug", using: :btree

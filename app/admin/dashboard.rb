@@ -2,13 +2,8 @@ ActiveAdmin.register_page "Dashboard" do
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
-  sidebar :static_pages do
-    h6 "Change the text or header images on these pages:"
-    p "Page list here"
-  end
-
-  sidebar :asset_types do
-    "Asset list here"
+  sidebar :sidebar do
+    "Add sidebar?"
   end
   
   content :title => proc{ I18n.t("active_admin.dashboard") } do

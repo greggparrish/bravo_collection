@@ -1,5 +1,5 @@
 ActiveAdmin.register Document do
-  permit_params :title, :year, :description, :slug
+  permit_params :title, :year, :description, :slug, :document_file
   active_admin_import
 
   controller do
@@ -21,6 +21,7 @@ ActiveAdmin.register Document do
       input :title
       input :slug
       input :description, :as => :ckeditor
+      input :document_file, :as => :file, :hint => object.document_file.present? ? image_tag(object.document_file.url) : content_tag(:span, "no image uploaded yet")
       li "Created at #{f.object.created_at}" unless f.object.new_record?
       actions
     end
