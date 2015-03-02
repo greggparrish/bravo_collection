@@ -3,7 +3,7 @@ ActiveAdmin.register Video do
   active_admin_import
 
   batch_action :vhcr do |ids|
-    Video.find(ids).each do |video|
+    Video.friendly.find(ids).each do |video|
       video.collection_id = "1"
       video.save
     end
@@ -11,7 +11,7 @@ ActiveAdmin.register Video do
   end
   
   batch_action :fidel do |ids|
-    Video.find(ids).each do |video|
+    Video.friendly.find(ids).each do |video|
       video.film_id = "1"
       video.save
     end

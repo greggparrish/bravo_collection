@@ -42,6 +42,10 @@ body {
   float: right;
   margin: 50px;
   text-align:center;
+  @media(max-width:$tablet) {
+    display: block;
+    margin: 0 auto;
+  }
   img {
     width: 90%;
     padding-bottom: 10px;
