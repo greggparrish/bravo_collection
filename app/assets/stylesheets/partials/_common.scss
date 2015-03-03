@@ -45,7 +45,9 @@ body {
   @media(max-width:$tablet) {
     display: block;
     margin: 0 auto;
-  }
+    float: none;
+    width: 100%;
+  } 
   img {
     width: 90%;
     padding-bottom: 10px;
@@ -55,8 +57,4 @@ body {
     font-size: 10em;
     margin-bottom: 20px;
   }
-  @media(max-width:$tablet) {
-    float: none;
-    width: 80%;
-  } 
 }
