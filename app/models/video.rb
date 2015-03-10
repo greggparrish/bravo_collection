@@ -14,13 +14,6 @@ class Video < ActiveRecord::Base
     self.name+'-'+self.title
   end
 
-  def slug_candidates
-    [
-      :name, :title,
-      [:name, :title, :id]
-    ]
-  end
-
   def should_generate_new_friendly_id?
     new_record? || slug.blank?
   end

@@ -2,7 +2,7 @@ class Film < ActiveRecord::Base
   has_many :videos
   validates :title, :description, :thumbnail_file_name, :presence => true
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   has_attached_file :thumbnail, :default_url => "/system/films/default_film.jpg"
   validates_attachment_content_type :thumbnail, :content_type => /\Aimage\/.*\Z/
 

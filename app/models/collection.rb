@@ -3,7 +3,7 @@ class Collection < ActiveRecord::Base
   validates :title, :description, :presence => true
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   has_attached_file :image, :default_url => "/system/collections/default_collection.jpg"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 

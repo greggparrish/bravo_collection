@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   validates :title, :description, :document_file_file_name,  :presence => true
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   has_attached_file :document_file
   validates_attachment_content_type :document_file, content_type: ['application/pdf']
 
