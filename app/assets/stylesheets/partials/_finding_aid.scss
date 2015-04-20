@@ -1,0 +1,82 @@
+a.fa_title {
+  font-size: 1.2em;
+}
+
+.fa_index_item {
+  margin-bottom: 5%;
+}
+
+.fa_header {
+  background-color: $lightest-grey;
+  border-top: 1px solid $lighter-grey;
+  @media (min-width: $tablet) { 
+    border-left: 1px solid $lighter-grey;
+    border-top: none;
+  }
+}
+
+.fa_menu {
+  img {
+    width: 100%;
+  }
+  h5 {
+    margin: 0;
+    padding: 10px;
+    background-color: $lightest-grey;
+  }
+
+  ul {
+    padding: 10px;
+    margin:0;  
+    li {
+      list-style-type: none;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+
+table.finding_aid_about > tbody > tr > td {
+  padding: 10px;
+  vertical-align: top;
+
+  &:nth-of-type(odd) {
+    width: 25%;
+    font-weight: 700;
+  }
+}
+
+.finding_aid_table > table {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-striped;
+  width: 100%;
+  td.container {
+    width: 0;
+    padding: 10px;
+  }
+
+  td:nth-child(1) {
+      width: 10%;}
+  td:nth-child(2) {
+      width: 10%;}
+  h4 {
+    font-size:1em;
+    font-weight: 100;
+    font-style: italic;
+    border:0;
+    padding:0;
+  }
+}
+
+#top-link-block.affix-top {
+    position: absolute;
+    bottom: -82px;
+    right: 10px;
+}
+#top-link-block.affix {
+    position: fixed;
+    bottom: 18px;
+    right: 40px;
+}
+

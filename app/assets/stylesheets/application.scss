@@ -1,15 +1,17 @@
 @import "modules/colors";
 @import "modules/variables";
-@import "modules/typography";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "modules/typography";
+
 @import "partials/common";
 @import "partials/films";
-@import "partials/header";
+@import "partials/finding_aid";
 @import "partials/footer";
+@import "partials/header";
 @import "partials/videos";
 
 

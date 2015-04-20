@@ -1,5 +1,5 @@
 body {
-  background: $lightest-grey;
+  background: $light-grey;
 }
 
 .page_container {
@@ -23,8 +23,6 @@ body {
     }
   } 
 }
-
- 
 
 .jumbotron {
   padding: 0;
@@ -58,3 +56,20 @@ body {
     margin-bottom: 20px;
   }
 }
+.grey_section {
+  background-color: $lightest-grey;
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  img {
+    padding-bottom:10px;
+  }
+}
+
+@media (max-width: 680px) { 
+   .col-xxs {
+     display:block;
+     float:none;
+     width: 100%;
+  }
+}
+

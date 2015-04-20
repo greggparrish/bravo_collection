@@ -1,16 +1,63 @@
-<% provide(:title, "Finding Aid") %>
-<div class='container'>
+<% provide(:title, "Finding Aid: " + @finding_aid.title) %>
+<div class='container-fluid'>
   <div class="bread">
-    <span class='bread_first'>FINDING AID</span>
+    <span class="bread_first">FINDING AID:</span><span class="bread_second"> ESTELA BRAVO COLLECTION</span>
   </div>
   <div class='page_intro'>
-    <p>
-    Aliquam elementum justo mi. Morbi ultricies lacinia euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sit amet risus massa. Ut libero tortor, venenatis quis libero eu, tempor faucibus arcu. Morbi purus erat, accumsan pulvinar sapien vel, sagittis cursus nulla. Maecenas feugiat dui ut gravida varius. Fusce convallis molestie dapibus. Fusce vel augue sit amet urna auctor maximus id in quam. Phasellus pulvinar maximus tempus. Etiam bibendum justo ut justo efficitur efficitur. Morbi at velit risus. Aenean arcu urna, fringilla at tincidunt eu, luctus ut ante. Nullam condimentum in erat id luctus.
-    </p>
-  </div>
-  <h4>BRAVO COLLECTION AT THE TAMIMENT LIBRARY</h4>
+    <div class='col-xxs col-xs-4 fa_menu'>
+      <%= image_tag(@finding_aid.image, class: "fa_img") %>
+      <h5>CONTENTS</h5>
+      <ul>
+        <li><%= icon('angle-right') %> <a href="#about">About</a></li>
+        <% @series.each do |s| %>
+          <li><%= icon('angle-right') %> <%= link_to s.title, anchor: "series_#{s.id}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class='col-xxs col-xs-8 fa_header'>
       <p>
-        <%= @findingaid.body_text %>
+        <%= @finding_aid.header.html_safe %>
       </p>
- 
+    </div>
+  </div>
 </div>
+
+<!-- START ABOUT GREY -->
+<div class='container-fluid grey_section' id="about">
+  <div class='row'>
+    <div class='col-xs-12'>
+     <h6>ABOUT</h6>
+      <h5>DESCRIPTIVE SUMMARY</h5>
+      <table class='finding_aid_about'>
+        <tbody>
+          <% @finding_aid.attributes.except("id", "header", "created_at", "updated_at", "slug", "access_points", "scope_note", "historical_note", "arrangement", "administrative_information", "image_file_name", "image_updated_at", "image_content_type", "image_file_size").each do |k,v| %>
+            <tr>
+              <td><%= k.humanize %></td>
+              <td><%= v.try(:html_safe) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- END ABOUT GREY -->
+<% @finding_aid.attributes.except("id", "header", "creator", "title", "dates_inclusive", "dates_bulk", "abstract", "quantity", "location_note", "language", "call_phrase", "created_at", "updated_at", "slug", "image_file_name", "image_updated_at", "image_content_type", "image_file_size").each do |k,v| %>
+  <div class='container-fluid <%= cycle '', 'grey_section' %>'>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <h5><%= k.humanize.upcase %></h5>
+        <p><%= v.try(:html_safe) %></p>
+      </div>
+    </div>
+ </div>
+<% end %>
+
+<%= render @series %>
+
+<!-- child of the body tag -->
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span><!-- /top-link-block -->
