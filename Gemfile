@@ -21,12 +21,9 @@ gem "turbolinks"
 gem "uglifier"
 
 ## NYU gems
-#gem 'formaggio', github: 'NYULibraries/formaggio'
+gem 'formaggio', github: 'NYULibraries/formaggio'
 
 group :development do
-  gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
   gem "populator"
   gem "web-console"
 end
