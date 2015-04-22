@@ -2,7 +2,7 @@ mysql2: &mysql2
   adapter: mysql2
   encoding: utf8
 
-development:
+development: &development
   <<: *mysql2
   host:     <%= ENV['BRAVO_DB_HOST']     %>
   database: <%= ENV['BRAVO_DB_DATABASE'] %>
@@ -11,6 +11,9 @@ development:
   min_messages: warning
   pool: 2
   timeout: 5000
+
+staging:
+  <<: *development
 
 test:
   <<: *mysql2
