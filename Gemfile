@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby "2.2.0"
-
 gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"
 gem 'therubyracer', platforms: :ruby
 gem "active_admin_import" , '2.1.2'
