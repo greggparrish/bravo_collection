@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
-ruby "2.2.0"
-
 gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"
+gem 'therubyracer', platforms: :ruby
 gem "active_admin_import" , '2.1.2'
 gem "bootstrap-sass"
 gem "cancan"
@@ -21,12 +20,10 @@ gem "turbolinks"
 gem "uglifier"
 
 ## NYU gems
-#gem 'formaggio', github: 'NYULibraries/formaggio'
+gem 'formaggio', github: 'NYULibraries/formaggio'
+
 
 group :development do
-  gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
   gem "populator"
   gem "web-console"
 end
