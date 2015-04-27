@@ -2,17 +2,18 @@ mysql2: &mysql2
   adapter: mysql2
   encoding: utf8
 
-development:
-  <<: *mysql2 
-  host:     <%= ENV['BRAVO_DB_HOST']     %>
-  database: <%= ENV['BRAVO_DB_DATABASE'] %>
-  username: <%= ENV['BRAVO_DB_USER']     %>
-  password: <%= ENV['BRAVO_DB_PASSWORD'] %>
-  encoding: utf8
-  host: localhost
+development: &development
+  <<: *mysql2
+  host:     <%= ENV['BRAVO_COLLECTION_DB_HOST']     %>
+  database: <%= ENV['BRAVO_COLLECTION_DB_DATABASE'] %>
+  username: <%= ENV['BRAVO_COLLECTION_DB_USER']     %>
+  password: <%= ENV['BRAVO_COLLECTION_DB_PASSWORD'] %>
   min_messages: warning
   pool: 2
   timeout: 5000
+
+staging:
+  <<: *development
 
 test:
   <<: *mysql2
@@ -20,7 +21,7 @@ test:
 
 production:
   <<: *mysql2
-  host:     <%= ENV['BRAVO_DB_HOST']     %>
-  database: <%= ENV['BRAVO_DB_DATABASE'] %>
-  username: <%= ENV['BRAVO_DB_USER']     %>
-  password: <%= ENV['BRAVO_DB_PASSWORD'] %>
+  host:     <%= ENV['BRAVO_COLLECTION_DB_HOST']     %>
+  database: <%= ENV['BRAVO_COLLECTION_DB_DATABASE'] %>
+  username: <%= ENV['BRAVO_COLLECTION_DB_USER']     %>
+  password: <%= ENV['BRAVO_COLLECTION_DB_PASSWORD'] %>
