@@ -6,7 +6,7 @@
   <div class='page_intro'>
     <div class='video_player'>
       <div class="embed_wrapper">
-        <%= image_tag(@video.thumbnail) %>
+        <%= @video.embed.html_safe %>
       </div>
       <div class="video_metadata">
         <div class="video_title"><%= @video.name.upcase %>: <%= @video.title.upcase %> &nbsp; &nbsp; (<%= @video.duration %>)</div>
@@ -15,7 +15,7 @@
           <p class="float-right"><strong><%= link_to "TRANSCRIPT", @video.transcript.url %></strong></p>
         <% end %>
         <ul class="video_social">
-         <li><a onclick="window.open('http://twitter.com/share','C2G','menubar=no,width=550,height=250,toolbar=no'); return false;" href="#"><%= icon('twitter') %></i></a></li>
+         <li><a onclick="window.open('http://twitter.com/share?text=<%= @video.name+ ": " + @video.title %>','C2G','menubar=no,width=550,height=250,toolbar=no'); return false;" href="#"><%= icon('twitter') %></i></a></li>
          <li><a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"><%= icon('facebook') %></i></a></li>
          <li><a href="mailto:?subject=Estela%20Bravo%20Collection&body=<%= @video.name+ ": " + @video.title + "%0A" + request.original_url %>"><%= icon('envelope') %></a></li>
         </ul>
