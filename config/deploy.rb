@@ -3,6 +3,8 @@ set :recipient, "web.services@library.nyu.edu"
 set :app_title, "bravo_collection"
 set :rvm_ruby_string, "2.1.3"
 
+set :new_relic_environments, []
+
 after "deploy:assets:precompile", "deploy:public:copy_system"
 namespace :deploy do
   namespace :public do
