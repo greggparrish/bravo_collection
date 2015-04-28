@@ -1,7 +1,7 @@
-class SeriesController < InheritedResources::Base
+class SeriesController < ApplicationController
   def show
     @series = Series.friendly.find(params[:id])
-  end 
+  end
 
   private
 
@@ -9,4 +9,3 @@ class SeriesController < InheritedResources::Base
       params.require(:series).permit(:title, :description, :table)
     end
 end
-
