@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
-  def home 
+  def home
     @video_grid = Video.order('id DESC').limit(6)
   end
 
-  def contact 
+  def contact
   end
 
   def estela_bravo

@@ -1,4 +1,4 @@
-class FilmsController < InheritedResources::Base
+class FilmsController < ApplicationController
   def index
     @films = Film.all
     @film_grid = Film.all
@@ -14,4 +14,3 @@ class FilmsController < InheritedResources::Base
       params.require(:film).permit(:title, :year, :time, :description, :thumbnail)
     end
 end
-

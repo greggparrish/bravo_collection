@@ -1,8 +1,8 @@
-class CollectionsController < InheritedResources::Base
+class CollectionsController < ApplicationController
   def index
     redirect_to "/collections/1"
   end
- 
+
   def show
     @collection = Collection.friendly.find(params[:id])
     @videos = Video.where(collection_id: @collection.id)
@@ -14,4 +14,3 @@ class CollectionsController < InheritedResources::Base
       params.require(:collection).permit(:title, :description, :slug, :image)
     end
 end
-

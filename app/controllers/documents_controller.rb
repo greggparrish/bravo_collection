@@ -1,4 +1,4 @@
-class DocumentsController < InheritedResources::Base
+class DocumentsController < ApplicationController
   def index
     @documents = Document.all
   end
@@ -9,4 +9,3 @@ class DocumentsController < InheritedResources::Base
       params.require(:document).permit(:title, :year, :description)
     end
 end
-
