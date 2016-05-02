@@ -53,6 +53,18 @@
 
 <%= render @series %>
 
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h5 class="all-caps">THIS PROJECT WAS MADE POSSIBLE THROUGH THE GENEROSITY OF:</h5>
+
+      <%- donor_list.each do |donor| -%>
+        <div><%= donor %></div>
+      <%- end -%>
+    </div>
+  </div>
+</div>
+
 <!-- child of the body tag -->
 <span id="top-link-block" class="hidden">
     <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
