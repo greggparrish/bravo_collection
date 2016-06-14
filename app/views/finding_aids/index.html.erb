@@ -9,7 +9,7 @@
       <h5>CONTENTS</h5>
       <ul>
         <li><%= icon('angle-right') %> <a href="#about">About</a></li>
-        <li><%= icon('angle-right') %> Finding Aid [being revised]</li>
+        <li><%= icon('angle-right') %> <%= link_to "Finding Aid", "http://dlib.nyu.edu/findingaids/html/tamwag/tam_616/", target: '_blank' %></li>
       </ul>
     </div>
     <div class='col-xxs col-xs-8 fa_header'>
@@ -52,6 +52,18 @@
 <% end %>
 
 <%= render @series %>
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h5 class="all-caps">THIS PROJECT WAS MADE POSSIBLE THROUGH THE GENEROSITY OF:</h5>
+
+      <%- donor_list.each do |donor| -%>
+        <div><%= donor %></div>
+      <%- end -%>
+    </div>
+  </div>
+</div>
 
 <!-- child of the body tag -->
 <span id="top-link-block" class="hidden">

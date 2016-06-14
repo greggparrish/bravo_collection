@@ -18,6 +18,7 @@ gem 'sass', '~> 3.4'
 gem 'simple_form', '3.1.0'
 gem 'turbolinks', '2.5.3'
 gem 'uglifier', '2.7.0'
+gem 'seed_dump'
 
 ## NYU gems
 gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
