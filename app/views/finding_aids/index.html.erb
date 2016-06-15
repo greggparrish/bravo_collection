@@ -1,7 +1,7 @@
 <% provide(:title, "Finding Aid: " + @finding_aid.title) %>
 <div class='container-fluid'>
   <div class="bread">
-    <span class="bread_first">FINDING AID:</span><span class="bread_second"> ESTELA BRAVO COLLECTION</span>
+    <span class="bread_first"><%= link_to "FINDING AID: ESTELA BRAVO COLLECTION", external_finding_aid_url, target: '_blank' %></span>
   </div>
   <div class='page_intro'>
     <div class='col-xxs col-xs-4 fa_menu'>
@@ -9,7 +9,7 @@
       <h5>CONTENTS</h5>
       <ul>
         <li><%= icon('angle-right') %> <a href="#about">About</a></li>
-        <li><%= icon('angle-right') %> <%= link_to "Finding Aid", "http://dlib.nyu.edu/findingaids/html/tamwag/tam_616/", target: '_blank' %></li>
+        <li><%= icon('angle-right') %> <%= link_to "Finding Aid", external_finding_aid_url, target: '_blank' %></li>
       </ul>
     </div>
     <div class='col-xxs col-xs-8 fa_header'>

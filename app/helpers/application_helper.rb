@@ -17,4 +17,8 @@ module ApplicationHelper
     end
   end
 
+  def external_finding_aid_url
+    "http://dlib.nyu.edu/findingaids/html/tamwag/tam_616/"
+  end
+
 end
