@@ -23,6 +23,8 @@ gem 'seed_dump'
 ## NYU gems
 gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
 
+gem 'nyulibraries_errors', github: 'NYULibraries/nyulibraries_errors', tag: 'v1.0.0'
+
 group :development do
   gem 'populator'
   gem 'web-console'
