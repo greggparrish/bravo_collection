@@ -1,0 +1,6 @@
+/ START SERIES
+.container-fluid.grey_section{:id => "series_#{series.id}"}
+  %h6= series.title.upcase
+  .row
+    .col-xs-12.finding_aid_table
+      = series.table.html_safe

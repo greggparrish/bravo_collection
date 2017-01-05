@@ -1,0 +1,12 @@
+.col-xs-6.col-sm-4.col-md-3
+  .film_wrapper
+    .image_wrapper
+      = link_to image_tag(film.thumbnail, class: "film_img"), film_path(film.slug)
+      .film_title= link_to film.title.upcase, film_path(film.slug)
+    .year_dur
+      %p.float-left= film.year
+      %p.float-right
+        = film.duration
+        min
+    .film_desc
+      %p= truncate(film.description, length: 150, :escape => false)

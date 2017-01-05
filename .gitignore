@@ -1,6 +1,7 @@
 *.rbc
 *.swp
 *.sql
+*.gz
 capybara-*.html
 .rspec
 .capistrano

@@ -1,0 +1,11 @@
+- provide(:title, @collection.title)
+.container
+  .bread
+    %span.bread_first COLLECTION:
+    %span.bread_second
+      = @collection.title.upcase
+  .page_intro
+    = @collection.description.html_safe
+.container
+  .film_grid
+    = render @videos

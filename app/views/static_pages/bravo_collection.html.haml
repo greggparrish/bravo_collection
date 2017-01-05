@@ -1,0 +1,23 @@
+- provide(:title, "About the Bravo Collection")
+.jumbotron
+  #myCarousel.carousel.slide
+    .carousel-inner
+      .item.active
+        = image_tag "collection_header.jpg"
+.container
+  .row
+    .col-xs-12
+      .sidebar_embed
+        = link_to(icon('search'), "finding-aid")
+        %h4 FINDING AID
+        %p
+          For a complete list of items in the collection, check out the #{link_to("finding aid", finding_aids_path)}.
+      %p
+        The Estela and Ernesto Bravo Films and Video Collection comprises the raw materials--interviews, filmed speeches, performances, demonstrations, conversations, archival footage and B-roll--amassed by Estela and Ernesto Bravo in the making of fifty films from Those Who Left in 1980 to Mandela and Fidel. Approximately a third of the collection comprises the inputs for the award-winning film
+        = succeed "," do
+          %em Fidel: The Untold Story
+      %p The collection also includes materials for films that as of 2015 have yet to be made. In July 2012, NYU's Tamiment Library received the bulk of the collection, comprising 1365 U-matic and Betacam videocassettes and 16 mm and 35mm masters. Unfortunately, due to climate conditions where they were originally kept, many of the films arrived with extensive mold and some, due to age, were showing signs of hydrolysis or "sticky shed."  In the past three years, NYU has undertaken a program of systematic remediation of these films so that they can be accessible to scholars. That process continues.
+      %p
+        This website currently features interviews conducted by the Bravos between 1996 and 1998 for the film,
+        = succeed "." do
+          %em Fidel: The Untold Story

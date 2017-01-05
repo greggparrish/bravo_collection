@@ -10,6 +10,7 @@ gem 'delayed_job_active_record', '4.0.3'
 gem 'devise', '3.4.1'
 gem 'font-awesome-sass', '4.3.1'
 gem 'friendly_id', '5.1.0'
+gem "haml-rails", "~> 0.9"
 gem 'jquery-rails', '4.0.3'
 gem 'mysql2', '0.3.18'
 gem 'paperclip', '4.2.1'

@@ -1,0 +1,7 @@
+/ START SERIES
+.container-fluid
+  %h6= @series.finding_aid.title.upcase
+  .row
+    .col-xs-12.finding_aid_table
+      %h5= @series.title
+      = @series.table.html_safe

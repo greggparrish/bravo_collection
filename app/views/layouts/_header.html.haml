@@ -1,0 +1,20 @@
+.header
+  = link_to image_tag("logo.png", :alt => "Estela Bravo Collection"), root_path
+  %nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      #navbar.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          = nav_link "BRAVO COLLECTION", bravo_collection_path
+          = nav_link "ESTELA BRAVO", estela_bravo_path
+          = nav_link "FILMS", films_path
+          %li= link_to "FINDING AID", external_finding_aid_url, target: '_blank'
+          = nav_link "VIDEO HISTORY OF THE CASTRO ERA", collection_path("video-history-of-the-castro-era")
+      / /.navbar-collapse
+    / /.container-fluid
+/ header

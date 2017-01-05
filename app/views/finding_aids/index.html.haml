@@ -1,0 +1,50 @@
+- provide(:title, "Finding Aid: " + @finding_aid.title)
+.container-fluid
+  .bread
+    %span.bread_first= link_to "FINDING AID: ESTELA BRAVO COLLECTION", external_finding_aid_url, target: '_blank'
+  .page_intro
+    .col-xxs.col-xs-4.fa_menu
+      = image_tag(@finding_aid.image, class: "fa_img")
+      %h5 CONTENTS
+      %ul
+        %li
+          = icon('angle-right')
+          %a{:href => "#about"} About
+        %li
+          = icon('angle-right')
+          = link_to "Finding Aid", external_finding_aid_url, target: '_blank'
+    .col-xxs.col-xs-8.fa_header
+      %p
+        = @finding_aid.header.html_safe
+/ START ABOUT GREY
+#about.container-fluid.grey_section
+  .row
+    .col-xs-12
+      %h6 ABOUT
+      %h5 DESCRIPTIVE SUMMARY
+      %table.finding_aid_about
+        %tbody
+          - @finding_aid.attributes.except("id", "header", "created_at", "updated_at", "slug", "access_points", "scope_note", "historical_note", "arrangement", "administrative_information", "image_file_name", "image_updated_at", "image_content_type", "image_file_size").each do |k,v|
+            %tr
+              %td= k.humanize
+              %td= v.try(:html_safe)
+/ END ABOUT GREY
+- @finding_aid.attributes.except("id", "header", "creator", "title", "dates_inclusive", "dates_bulk", "abstract", "quantity", "location_note", "language", "call_phrase", "created_at", "updated_at", "slug", "image_file_name", "image_updated_at", "image_content_type", "image_file_size", "historical_note", "scope_note", "access_points", "arrangement", "administrative_information").each do |k,v|
+  %div{:class => "container-fluid #{cycle '', 'grey_section'}"}
+    .row
+      .col-xs-12
+        %h5= k.humanize.upcase
+        %p= v.try(:html_safe)
+= render @series
+.container-fluid
+  .row
+    .col-xs-12
+      %h5.all-caps THIS PROJECT WAS MADE POSSIBLE THROUGH THE GENEROSITY OF:
+      - donor_list.each do |donor|
+        %div= donor
+/ child of the body tag
+%span#top-link-block.hidden
+  %a.well.well-sm{:href => "#top", :onclick => "$('html,body').animate({scrollTop:0},'slow');return false;"}
+    %i.glyphicon.glyphicon-chevron-up
+    Back to Top
+/ /top-link-block

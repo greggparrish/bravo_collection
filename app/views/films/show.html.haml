@@ -1,0 +1,21 @@
+- provide(:title, @film.title)
+.container
+  .bread
+    %span.bread_first FILMS:
+    %span.bread_second
+      %em= @film.title.upcase
+  .page_intro
+    = image_tag(@film.thumbnail, class: "description_img")
+    %p
+      = @film.description.html_safe
+    %p.float-left
+      = @film.year
+    %p.float-right
+      = @film.duration
+      min
+  - if @related_video.any?
+    .video_grid
+      %h4
+        VIDEOS FROM
+        %em= @film.title.upcase
+      = render @related_video

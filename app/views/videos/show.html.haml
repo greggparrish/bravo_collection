@@ -1,0 +1,36 @@
+- provide(:title, @video.name + ": " + @video.title)
+.container-fluid
+  .bread
+    %span.bread_first
+      = @video.name.upcase
+      \:
+    %span.bread_second
+      = @video.title.upcase
+  .page_intro
+    .video_player
+      .embed_wrapper
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "350", :src => "#{@video.embed.html_safe}", :width => "100%"}
+      .video_metadata
+        .video_title
+          = @video.name.upcase
+          \: #{@video.title.upcase}
+        .video_description
+          = @video.description.html_safe
+        %p.float-right
+          %strong= link_to "TRANSCRIPT", @video.transcript.url
+        .clearfix
+        %p.float-left= @video.year
+        %p.float-right
+          Duration: #{@video.duration}
+        - if @video.transcript?
+        %ul.video_social
+          %li
+            %a{:href => "#", :onclick => "window.open('http://twitter.com/share','C2G','menubar=no,width=550,height=250,toolbar=no'); return false;"}= icon('twitter')
+          %li
+            %a{:href => "#", :onclick => "window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"}= icon('facebook')
+          %li
+            %a{:href => "mailto:?subject=Estela%20Bravo%20Collection=#{@video.name+ ": " + @video.title + "%0A" + request.original_url}"}= icon('envelope')
+  - if @related_video.any?
+    .video_grid
+      %h4 RELATED VIDEOS
+      = render @related_video
